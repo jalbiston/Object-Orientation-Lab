@@ -154,7 +154,23 @@ wizard1.castSpell();
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+  constructor(brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell() {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold`);
+  }
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
 
 /*
     Next make three new phone instances using your class.
@@ -166,7 +182,9 @@ wizard1.castSpell();
     - price: number
 */
 
-//Code Here
+let phone1 = new Phone("Apple", "i0s17", "128gb", "White", 1000);
+let phone2 = new Phone("Samsung", "galaxy", "250gb", "Black", "$1000.00");
+let phone3 = new Phone("LG", "64gb", "Gold", "$" + 250.0);
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -175,7 +193,8 @@ wizard1.castSpell();
   Then console.log that object to see the price change
 */
 
-//Code Here
+phone2.changePrice("$800.00");
+console.log(phone2);
 
 /*
   Now call the sell method on one of your other phone objects
@@ -183,7 +202,8 @@ wizard1.castSpell();
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here
+phone3.sell();
+console.log(phone3);
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 
@@ -201,8 +221,10 @@ const colors = {
 };
 //do not edit this object
 
-//Code Here
-
+let colorsCopy = {
+  ...colors,
+};
+console.log(colorsCopy);
 /*
  Now use the spread operator to combine the following 2 objects into one. 
  Call the new variable helensInfo. 
@@ -227,8 +249,11 @@ const shippingInfo = {
 };
 //do not edit the objects above
 
-//Code Here
-
+let helensInfo = {
+  ...contactInfo,
+  ...shippingInfo,
+};
+console.log(helensInfo);
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
